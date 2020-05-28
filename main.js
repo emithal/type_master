@@ -1,6 +1,6 @@
 window.addEventListener("load", init);
 // Creating some global variables
-let time = 3;
+let time = 4;
 let score = 0;
 let isPlaying;
 
@@ -13,6 +13,7 @@ const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
 const audio = new Audio("sounds/ding.mp3");
 const point = new Audio("sounds/gameover.wav");
+point.loop = false;
 
 const words = [
   "Adult",
@@ -199,7 +200,6 @@ const words = [
   "Shower",
   "Signature",
   "Skeleton",
-  "Slave",
   "Snail",
   "Software",
   "Solid",
@@ -302,7 +302,7 @@ function countdown() {
     time--;
   } else if (time === 0) {
     isPlaying = false;
-    point.play();
+
   }
   // Show time
   timeDisplay.innerHTML = time;
@@ -310,6 +310,6 @@ function countdown() {
 
 function checkStatus() {
   if (!isPlaying && time === 0) {
-    message.innerHTML = "Game over, sir/madam!";
+    message.innerHTML = "<span style='color: black; font-size:40px'>Game over, sir/madam!</span>";
   }
 }
