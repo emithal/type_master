@@ -12,8 +12,7 @@ const timeDisplay = document.querySelector("#time");
 const message = document.querySelector("#message");
 const seconds = document.querySelector("#seconds");
 const audio = new Audio("sounds/ding.mp3");
-const point = new Audio("sounds/gameover.wav");
-point.loop = false;
+
 
 const words = [
   "Adult",
